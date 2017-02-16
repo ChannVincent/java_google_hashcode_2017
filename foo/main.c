@@ -8,10 +8,47 @@
 
 #include <stdio.h>
 
+int nbLignes;
+int nbColones;
+
+void checkAllCells(int (*tab)[nbLignes][nbColones], int nbMin){
+    
+    int i = 0;
+    int j = 0;
+    
+    int k =0;
+    
+    int tmp = 0;
+    
+    int slice[nbMin];
+    
+    for(i = 0; i<nbLignes; i++){
+        for(j=0; j<nbColones; j++){
+            
+            int p = *tab[i][j];
+            slice[tmp] = p;
+            
+            printf("coucou %d", p);
+            
+            if(tmp == 2*nbMin-1){
+                //tmp = 0;
+                for(k=0; k<2*nbMin;k++){
+                    printf("%d", slice[k]);
+                }
+            }
+            
+            tmp++;
+            
+        }
+    }
+    
+}
+
+
 void readFile(){
     FILE* fichier = NULL;
     
-    fichier = fopen("/Users/cdurif/Desktop/medium.txt", "r");
+    fichier = fopen("/Users/cdurif/Desktop/small.txt", "r");
     
     if (fichier != NULL)
     {
@@ -73,8 +110,38 @@ void readFile(){
         
         
         fclose(fichier);
+        
+        int ii = 0;
+        int jj = 0;
+        
+        int k =0;
+        
+        int tmp = 0;
+        
+        int slice[nbMin];
+        
+        for(ii = 0; ii<nbLignes; ii++){
+            for(jj=0; jj<nbColones; jj++){
+                
+                int p = tab[ii][jj];
+                slice[tmp] = p;
+                
+                if(tmp == 2*nbMin-1){
+                    //tmp = 0;
+                    for(k=0; k<2*nbMin;k++){
+                        printf("%d", slice[k]);
+                    }
+                }
+                
+                tmp++;
+                
+            }
+        }
     }
+    
+
 }
+
 
 int main(int argc, const char * argv[]) {
     readFile();
