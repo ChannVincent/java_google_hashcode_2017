@@ -1,5 +1,10 @@
 # smartapps_google_hashcode
 
+# Team
+
+Camille Durif
+Vincent Chann
+
 # Roadmap
 
 ## gh-01 : Init du projet
