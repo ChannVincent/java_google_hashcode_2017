@@ -71,12 +71,41 @@ void readFile(){
             }
         }
         
-        
         fclose(fichier);
     }
 }
 
+int isSliceValid(int *slice, int minIngredients, int sliceSize) {
+    int tomatoeCount = 0;
+    int mushroomCount = 0;
+    
+    for (int i = 0; i < sliceSize; i++) {
+        if (slice[i] == 0) {
+            tomatoeCount++;
+        }
+        else {
+            mushroomCount++;
+        }
+    }
+    
+    if (tomatoeCount < minIngredients) {
+        return 0;
+    }
+    else if (mushroomCount < minIngredients) {
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+
+void testIsSliceValid() {
+    int slice[6] = {0,1,1,1,0,1};
+    printf("is Slice valid : %d\n", isSliceValid(slice, 1, 6));
+}
+
 int main(int argc, const char * argv[]) {
+    //testIsSliceValid();
     readFile();
     return 0;
 }
