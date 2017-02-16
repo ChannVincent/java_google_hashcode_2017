@@ -2,8 +2,9 @@
 
 # Team
 
-Camille Durif
-Vincent Chann
+Camille Durif. 
+Vincent Chann. 
+Aurélien Haie. 
 
 # Roadmap
 
