@@ -249,6 +249,7 @@
 				83A718EF1E521A9000A87B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
