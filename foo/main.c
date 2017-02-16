@@ -125,9 +125,15 @@ void readFile(){
                 int p = tab[ii][jj];
                 slice[tmp] = p;
                 
-                if(tmp == 2*nbMin-1){
-                    //tmp = 0;
-                    for(k=0; k<2*nbMin;k++){
+                
+                if(tmp == 2 * nbMin - 1){
+                    tmp = 0;
+                    int result = isSliceValid(slice, nbMin, 2*nbMin);
+                    printf("LA PART EST %d", result);
+                    
+                    
+                    
+                    for(k=0; k < 2 * nbMin; k++){
                         printf("%d", slice[k]);
                     }
                 }
