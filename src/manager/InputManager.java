@@ -21,8 +21,8 @@ public class InputManager {
         return result;
     }
 
-    public int[][] getMatriceInput(int lineCount, int columnCount) {
-        int[][] result = new int[columnCount][lineCount];
+    public int[][] getMatrixInput(int lineCount, int columnCount) {
+        int[][] result = new int[lineCount][columnCount];
         String[] lines = input.split("\n");
         for (int y = 1; y < lineCount + 1; y++) {
 
@@ -30,27 +30,27 @@ public class InputManager {
             for (int x = 0; x < columnCount; x++) {
 
                 if (String.valueOf(line.charAt(x)).equals("M")) {
-                    result[x][y - 1] = 0;
+                    result[y - 1][x] = 0;
                 }
                 else if (String.valueOf(line.charAt(x)).equals("T")) {
-                    result[x][y - 1] = 1;
+                    result[y - 1][x] = 1;
                 }
                 else {
                     System.out.println("error parsing matrice input at x = " + x + " / y = " + (y - 1));
-                    result[x][y - 1] = -1;
+                    result[y - 1][x] = -1;
                 }
             }
         }
         return result;
     }
 
-    public int[][] getMatriceInput(int lineCount, int columnCount, boolean debug) {
-        int[][] result = getMatriceInput(lineCount, columnCount);
+    public int[][] getMatrixInput(int lineCount, int columnCount, boolean debug) {
+        int[][] result = getMatrixInput(lineCount, columnCount);
         if (debug) {
             for (int y = 0; y < lineCount; y++) {
 
                 for (int x = 0; x < columnCount; x++) {
-                    System.out.print(result[x][y]);
+                    System.out.print(result[y][x]);
                 }
 
                 System.out.print("\n");

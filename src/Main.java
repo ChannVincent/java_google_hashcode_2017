@@ -10,6 +10,7 @@ public class Main {
         timerManager.start();
 
         PizzaSolver pizzaSolver = new PizzaSolver(fileManager.getSmallInput());
+        pizzaSolver.solveA();
 
         timerManager.end();
     }
