@@ -9,8 +9,8 @@ public class Main {
         FileManager fileManager = new FileManager();
         timerManager.start();
 
-        PizzaSolver pizzaSolver = new PizzaSolver(fileManager.getSmallInput());
-        pizzaSolver.solveA();
+        PizzaSolver pizzaSolver = new PizzaSolver(fileManager.getBigInput());
+        fileManager.writeBigOutput(pizzaSolver.solveA());
 
         timerManager.end();
     }

@@ -30,10 +30,10 @@ public class InputManager {
             for (int x = 0; x < columnCount; x++) {
 
                 if (String.valueOf(line.charAt(x)).equals("M")) {
-                    result[y - 1][x] = 0;
+                    result[y - 1][x] = 1;
                 }
                 else if (String.valueOf(line.charAt(x)).equals("T")) {
-                    result[y - 1][x] = 1;
+                    result[y - 1][x] = 2;
                 }
                 else {
                     System.out.println("error parsing matrice input at x = " + x + " / y = " + (y - 1));

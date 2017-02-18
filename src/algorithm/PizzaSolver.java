@@ -35,35 +35,61 @@ public class PizzaSolver {
     /*
     Solutions
      */
-    public void solveA() {
+    public String solveA() {
         String result = "";
 
-        int[][] currentSlice = new int[1][maxCellsIn1Slice];
+        int sliceCounter = 0;
         int cellCounter = 0;
+        int[][] currentSlice = getResetSlice(maxCellsIn1Slice, 1);
 
         for (int y = 0; y < lineCount; y++) {
+            int indexSliceStart = 0;
             for (int x = 0; x < columnCount; x++) {
+
+                if (sliceCounter == 17) {
+                    int random = 4;
+                }
 
                 // create slice
                 currentSlice[0][cellCounter] = pizzaMatrix[y][x];
 
                 // continue to advance until the border
-                if (cellCounter < maxCellsIn1Slice && (maxCellsIn1Slice - cellCounter + x) < columnCount) {
+                if ((cellCounter < maxCellsIn1Slice - 1) && (x < columnCount - 1)) {
                     cellCounter++;
                 }
                 else {
                     if (isSliceValid(currentSlice)) {
-                        result += (x - maxCellsIn1Slice) + " " + y + " " + x + " " + y + "\n";
+                        result += y + " " + indexSliceStart + " " + y + " " + x + "\n";
+                        sliceCounter++;
+                        indexSliceStart = x + 1;
                     }
+                    else {
+                        indexSliceStart = x - cellCounter + 2;
+                        x = indexSliceStart - 1;
+                    }
+                    currentSlice = getResetSlice(maxCellsIn1Slice, 1);
                     cellCounter = 0;
                 }
+
             }
         }
 
-        System.out.println(result);
+        System.out.println(sliceCounter + "\n" + result);
+        return sliceCounter + "\n" + result;
     }
 
-
+    /*
+    Reset slice
+     */
+    protected int[][] getResetSlice(int columnCount, int lineCount) {
+        int[][] slice = new int[lineCount][columnCount];
+        for (int y = 0; y < lineCount; y++) {
+            for (int x = 0; x < columnCount; x++) {
+                slice[y][x] = 0;
+            }
+        }
+        return slice;
+    }
 
     /*
     Slice validator
@@ -77,14 +103,11 @@ public class PizzaSolver {
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                if (slice[y][x] == 0) {
+                if (slice[y][x] == 1) {
                     tomatoeCount++;
                 }
-                else if (slice[y][x] == 1) {
+                else if (slice[y][x] == 2) {
                     mushroomCount++;
-                }
-                else {
-                    System.out.println("error slice");
                 }
             }
         }
@@ -99,8 +122,8 @@ public class PizzaSolver {
 
     protected boolean testIsSliceValid() {
         int[][] slice = new int[][] {
-                { 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0 },
+                { 2, 2, 2, 1, 1, 1 },
+                { 2, 2, 2, 2, 2, 2 },
                 { 0, 0, 0, 0, 0, 0 }
         };
 
