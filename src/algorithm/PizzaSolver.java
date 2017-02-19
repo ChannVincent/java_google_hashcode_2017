@@ -42,34 +42,45 @@ public class PizzaSolver {
         int cellCounter = 0;
         int[][] currentSlice = getResetSlice(maxCellsIn1Slice, 1);
 
+        // for each row
         for (int y = 0; y < lineCount; y++) {
+
+            // for each column
             int indexSliceStart = 0;
             for (int x = 0; x < columnCount; x++) {
 
                 // create slice
                 currentSlice[0][cellCounter] = pizzaMatrix[y][x];
 
-                // continue to advance until the border
+                // continue to advance until the border or slice finished
                 if ((cellCounter < maxCellsIn1Slice - 1) && (x < columnCount - 1)) {
                     cellCounter++;
                 }
+
+                // if at the border or slice is finished
                 else {
+
+                    // if slice valid add it to the solution
                     if (isSliceValid(currentSlice)) {
                         result += y + " " + indexSliceStart + " " + y + " " + x + "\n";
                         sliceCounter++;
                         indexSliceStart = x + 1;
                     }
+
+                    // else test next slice
                     else {
                         indexSliceStart = x - cellCounter + 2;
                         x = indexSliceStart - 1;
                     }
+
+                    // reset slice and cell counter of slice
                     currentSlice = getResetSlice(maxCellsIn1Slice, 1);
                     cellCounter = 0;
                 }
-
             }
         }
 
+        // return result
         System.out.println(sliceCounter + "\n" + result);
         return sliceCounter + "\n" + result;
     }
