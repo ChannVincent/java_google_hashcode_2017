@@ -21,7 +21,7 @@ public class InputManager {
         return result;
     }
 
-    public int[][] getMatrixInput(int lineCount, int columnCount) {
+    public int[][] getPizzaMatrixInput(int lineCount, int columnCount) {
         int[][] result = new int[lineCount][columnCount];
         String[] lines = input.split("\n");
         for (int y = 1; y < lineCount + 1; y++) {
@@ -44,8 +44,8 @@ public class InputManager {
         return result;
     }
 
-    public int[][] getMatrixInput(int lineCount, int columnCount, boolean debug) {
-        int[][] result = getMatrixInput(lineCount, columnCount);
+    public int[][] getPizzaMatrixInput(int lineCount, int columnCount, boolean debug) {
+        int[][] result = getPizzaMatrixInput(lineCount, columnCount);
         if (debug) {
             for (int y = 0; y < lineCount; y++) {
 

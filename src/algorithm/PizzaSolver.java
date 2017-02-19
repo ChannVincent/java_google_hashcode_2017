@@ -28,7 +28,7 @@ public class PizzaSolver {
         columnCount = initInputs[1];
         minIngredientsIn1Slice = initInputs[2];
         maxCellsIn1Slice = initInputs[3];
-        pizzaMatrix = inputManager.getMatrixInput(lineCount, columnCount, true);
+        pizzaMatrix = inputManager.getPizzaMatrixInput(lineCount, columnCount, true);
         System.out.println("initInput : " + lineCount + " " + columnCount + " " + minIngredientsIn1Slice + " " + maxCellsIn1Slice);
     }
 
@@ -45,10 +45,6 @@ public class PizzaSolver {
         for (int y = 0; y < lineCount; y++) {
             int indexSliceStart = 0;
             for (int x = 0; x < columnCount; x++) {
-
-                if (sliceCounter == 17) {
-                    int random = 4;
-                }
 
                 // create slice
                 currentSlice[0][cellCounter] = pizzaMatrix[y][x];
