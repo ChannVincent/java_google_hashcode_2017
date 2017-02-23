@@ -11,8 +11,8 @@ public class InputManager {
         this.input = input;
     }
 
-    public int[] getFirstLineInput() {
-        String firstLine = input.split("\n", 2)[0];
+    public int[] getLineInput(int line) {
+        String firstLine = input.split("\n")[line];
         String[] splitLine = firstLine.split(" ");
         int[] result = new int[splitLine.length];
         for (int i = 0; i < splitLine.length; i++) {

@@ -23,7 +23,7 @@ public class PizzaSolver {
     }
 
     protected void initInputs() {
-        int[] initInputs = inputManager.getFirstLineInput();
+        int[] initInputs = inputManager.getLineInput(0);
         lineCount = initInputs[0];
         columnCount = initInputs[1];
         minIngredientsIn1Slice = initInputs[2];

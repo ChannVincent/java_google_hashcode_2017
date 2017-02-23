@@ -7,15 +7,15 @@ import java.io.*;
  */
 public class FileManager {
 
-    static final public String outputFileExemple = "output/output_example.txt";
-    static final public String outputFileSmall = "output/output_small.txt";
-    static final public String outputFileMedium = "output/output_medium.txt";
-    static final public String outputFileBig = "output/output_big.txt";
+    static final public String outputFileExemple = "output/output_kittens.txt";
+    static final public String outputFileSmall = "output/output_me_at_the_zoo.txt";
+    static final public String outputFileMedium = "output/output_trending_today.txt";
+    static final public String outputFileBig = "output/output_video_worth_spreading.txt";
 
-    static final public String inputFileExemple = "input/example.txt";
-    static final public String inputFileSmall = "input/small.txt";
-    static final public String inputFileMedium = "input/medium.txt";
-    static final public String inputFileBig = "input/big.txt";
+    static final public String inputFileExemple = "input/kittens.txt";
+    static final public String inputFileSmall = "input/me_at_the_zoo.txt";
+    static final public String inputFileMedium = "input/trending_today.txt";
+    static final public String inputFileBig = "input/videos_worth_spreading.txt";
 
     public FileManager() {
         cleanOutputFiles();
