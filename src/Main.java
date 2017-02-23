@@ -10,19 +10,21 @@ public class Main {
         FileManager fileManager = new FileManager();
         timerManager.start();
 
-        YoutubeCachingSolver solverSmall = new YoutubeCachingSolver(fileManager.getSmallInput());
-        fileManager.writeSmallOutput(solverSmall.solveA());
+        //YoutubeCachingSolver solverSmall = new YoutubeCachingSolver(fileManager.getSmallInput());
+        //fileManager.writeSmallOutput(solverSmall.solveA());
 
-        /*
-        YoutubeCachingSolver solverMedium = new YoutubeCachingSolver(fileManager.getMediumInput());
-        fileManager.writeMediumOutput(solverMedium.solveA());
 
+        //YoutubeCachingSolver solverMedium = new YoutubeCachingSolver(fileManager.getMediumInput());
+        //fileManager.writeMediumOutput(solverMedium.solveA());
+
+/*
         YoutubeCachingSolver solverBig = new YoutubeCachingSolver(fileManager.getBigInput());
         fileManager.writeBigOutput(solverBig.solveA());
+*/
 
         YoutubeCachingSolver solverExemple = new YoutubeCachingSolver(fileManager.getExempleInput());
         fileManager.writeExempleOutput(solverExemple.solveA());
-        */
+
 
         timerManager.end();
     }
