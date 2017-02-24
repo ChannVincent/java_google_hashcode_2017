@@ -63,8 +63,10 @@ public class YoutubeCachingSolver {
             int bestCacheId = getBestCache(endPoint.id);
 
             for (CacheCenter cacheCenter : cacheCenterList) {
+
+
                 if (cacheCenter.id == bestCacheId) {
-                    if ((cacheCenter.capacity + videoSizeList[videoId]) <= capacityOfEachCacheServer) {
+                    if ((bestCacheId != -1) && (videoId != -1) && ((cacheCenter.capacity + videoSizeList[videoId]) <= capacityOfEachCacheServer)) {
                         cacheCenter.addVideo(videoId);
                         cacheCenter.capacity += videoSizeList[videoId];
                     }
