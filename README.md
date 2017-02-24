@@ -23,8 +23,8 @@ Optimize video caching on different cache servers depending on their popularity.
 
 ## Final Score 
 
-#397 in France
-#2436 in the world
+Ranked 397 in France  
+Ranked 2436 in the World  
 ![Screenshot](final_score_qualification.png)
 
 # Training
