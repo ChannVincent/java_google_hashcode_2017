@@ -2,8 +2,8 @@
 
 ## Summary
 
-Optimize video caching on different cache servers depending on their popularity.
-[a relative link](hashcode2017.pdf)
+Optimize video caching on different cache servers depending on their popularity.  
+[link to problem states](hashcode2017.pdf)
 
 ## Team
 
@@ -32,8 +32,8 @@ Ranked 2436 in the World
 
 ## Summary
 
-Optimize pizza cutting to get at least L mushrooms & tomatoes on each part and a maximum of R cells.
-[a relative link](pizza.pdf)
+Optimize pizza cutting to get at least L mushrooms & tomatoes on each part and a maximum of R cells.  
+[link to problem states](pizza.pdf)
 
 ## Final Score 
 
